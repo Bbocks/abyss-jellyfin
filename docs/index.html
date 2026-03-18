@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Primary SEO-->
+    <title>Obsidian - Minimal Dark Theme for Jellyfin</title>
+    <meta name="description"
+        content="Obsidian is a clean, minimal dark theme for Jellyfin. Frosted glass surfaces, Google Sans typography, smooth transitions, and fully customisable CSS variables." />
+    <meta name="keywords"
+        content="Jellyfin theme, Jellyfin CSS, dark theme, Obsidian, Jellyfin custom CSS, media server theme" />
+    <meta name="author" content="AumGupta" />
+    <link rel="canonical" href="https://aumgupta.github.io/obsidian-jellyfin/" />
+
+    <!--Open Graph-->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Obsidian - Minimal Dark Theme for Jellyfin" />
+    <meta property="og:description"
+        content="A clean, minimal dark theme for Jellyfin. Frosted glass surfaces, refined typography, and smooth transitions." />
+    <meta property="og:url" content="https://aumgupta.github.io/obsidian-jellyfin/" />
+    <meta property="og:image" content="https://aumgupta.github.io/obsidian-jellyfin/assets/images/1.png" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="875" />
+    <meta property="og:site_name" content="Obsidian for Jellyfin" />
+
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Obsidian - Minimal Dark Theme for Jellyfin" />
+    <meta name="twitter:description"
+        content="A clean, minimal dark theme for Jellyfin. Frosted glass surfaces, refined typography, and smooth transitions." />
+    <meta name="twitter:image" content="https://aumgupta.github.io/obsidian-jellyfin/assets/images/1.png" />
+
+    <!--Favicon & manifest-->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#080808" />
+
+    <!--Styles & fonts-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet" />
+
+    <!--Structured data-->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Obsidian for Jellyfin",
+    "description": "A clean, minimal dark theme for Jellyfin with frosted glass surfaces, refined typography, and smooth transitions.",
+    "url": "https://aumgupta.github.io/obsidian-jellyfin/",
+    "author": { "@type": "Person", "name": "AumGupta" },
+    "license": "https://github.com/AumGupta/obsidian-jellyfin/blob/main/LICENSE",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web"
+  }
+  </script>
+</head>
+
+<body>
+
+    <!--Ambient background orbs-->
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+    <!--NAV-->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Obsidian home">
+                <img src="assets/favicon/apple-touch-icon.png" alt="Obsidian logo" class="nav-icon" width="26"
+                    height="26" />
+                <span>Obsidian</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#preview">Preview</a>
+                <a href="#customise">Customise</a>
+                <a href="#install">Install</a>
+                <a href="https://github.com/AumGupta/obsidian-jellyfin" target="_blank" rel="noopener noreferrer"
+                    class="nav-github" aria-label="View on GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!--HERO-->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-content reveal">
+            <div class="hero-badge">For Jellyfin</div>
+            <h1 class="hero-title" id="hero-title">Obsidian</h1>
+            <p class="hero-sub">A clean, minimal dark theme. Frosted glass surfaces,<br>refined typography, and smooth
+                transitions.</p>
+            <div class="hero-actions">
+                <a href="#install" class="btn btn-primary">Install Now</a>
+                <a href="https://github.com/AumGupta/obsidian-jellyfin" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-ghost">View on GitHub</a>
+            </div>
+        </div>
+        <div class="hero-image reveal reveal-delay">
+            <div class="screenshot-frame">
+                <img src="assets/images/1.png"
+                    alt="Obsidian theme - Jellyfin home screen showing My Media section with frosted glass header"
+                    width="900" loading="eager" />
+            </div>
+        </div>
+    </section>
+
+    <!--FEATURES-->
+    <section class="section" id="features" aria-labelledby="features-title">
+        <div class="section-inner">
+            <div class="section-label reveal">Features</div>
+            <h2 class="section-title reveal" id="features-title">Crafted for clarity.</h2>
+            <div class="features-grid" role="list">
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="4" />
+                            <path d="M3 9h18" />
+                        </svg>
+                    </div>
+                    <h3>Frosted Glass UI</h3>
+                    <p>Header, drawer, dialogs, and footer use <code>backdrop-filter</code> blur for a layered,
+                        depth-rich interface.</p>
+                </article>
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M4 7h16M4 12h10M4 17h7" />
+                        </svg>
+                    </div>
+                    <h3>Refined Typography</h3>
+                    <p>Google Sans throughout, with consistent weight and spacing for a clean, readable experience.</p>
+                </article>
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 3" />
+                        </svg>
+                    </div>
+                    <h3>Smooth Transitions</h3>
+                    <p>Every interaction uses carefully tuned <code>cubic-bezier</code> easing curves for fluid, natural
+                        motion.</p>
+                </article>
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="4" width="6" height="16" rx="2" />
+                            <rect x="10" y="4" width="12" height="7" rx="2" />
+                            <rect x="10" y="13" width="12" height="7" rx="2" />
+                        </svg>
+                    </div>
+                    <h3>Floating Sidebar</h3>
+                    <p>Pill-shaped drawer with rounded corners, subtle border, and a snappy slide animation.</p>
+                </article>
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="3" y="10" width="18" height="4" rx="2" />
+                            <circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                        </svg>
+                    </div>
+                    <h3>Pill Tab Bar</h3>
+                    <p>Active tab highlighted with a filled pill indicator, matching modern OS design patterns.</p>
+                </article>
+
+                <article class="feature-card reveal" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                        </svg>
+                    </div>
+                    <h3>Customisable</h3>
+                    <p>Three CSS variables - accent colour, corner radius, indicator style - let you retheme in seconds.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!--PREVIEW-->
+    <section class="section section-dark" id="preview" aria-labelledby="preview-title">
+        <div class="section-inner">
+            <div class="section-label reveal">Preview</div>
+            <h2 class="section-title reveal" id="preview-title">See it in action.</h2>
+            <div class="preview-grid">
+
+                <div class="preview-item preview-full reveal">
+                    <img src="assets/images/1.png" alt="Obsidian theme home screen" loading="lazy" />
+                    <span class="preview-caption">Home</span>
+                </div>
+
+                <div class="preview-row reveal">
+                    <div class="preview-item preview-sidebar">
+                        <img src="assets/images/2.png" alt="Obsidian sidebar navigation" loading="lazy" />
+                        <span class="preview-caption">Sidebar</span>
+                    </div>
+                    <div class="preview-item preview-stretch">
+                        <img src="assets/images/3.png" alt="Obsidian scrolled home" loading="lazy" />
+                        <span class="preview-caption">Scrolled Home</span>
+                    </div>
+                </div>
+
+                <div class="preview-row reveal">
+                    <div class="preview-item preview-stretch">
+                        <img src="assets/images/5.png" alt="Obsidian card layout" loading="lazy" />
+                        <span class="preview-caption">Cards</span>
+                    </div>
+                    <div class="preview-col">
+                        <div class="preview-item">
+                            <img src="assets/images/4.png" alt="Obsidian card hover state" loading="lazy" />
+                            <span class="preview-caption">Card Hover</span>
+                        </div>
+                        <div class="preview-item">
+                            <img src="assets/images/6.png" alt="Obsidian UI detail" loading="lazy" />
+                            <span class="preview-caption">UI Detail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-row reveal">
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/movies-1.png" alt="Obsidian movies library" loading="lazy" />
+                        <span class="preview-caption">Movies</span>
+                    </div>
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/shows-1.png" alt="Obsidian shows library" loading="lazy" />
+                        <span class="preview-caption">Shows</span>
+                    </div>
+                </div>
+
+                <div class="preview-row reveal">
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/music1.png" alt="Obsidian music suggestions" loading="lazy" />
+                        <span class="preview-caption">Music</span>
+                    </div>
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/music2.png" alt="Obsidian music albums grid" loading="lazy" />
+                        <span class="preview-caption">Music Albums</span>
+                    </div>
+                </div>
+                <div class="preview-row reveal">
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/music3.png" alt="Obsidian now playing screen" loading="lazy" />
+                        <span class="preview-caption">Now Playing</span>
+                    </div>
+                    <div class="preview-item preview-half">
+                        <img src="assets/images/music4.png" alt="Obsidian music queue" loading="lazy" />
+                        <span class="preview-caption">Queue</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--CUSTOMISATION-->
+    <section class="section" id="customise" aria-labelledby="customise-title">
+        <div class="section-inner">
+            <div class="section-label reveal">Customisation</div>
+            <h2 class="section-title reveal" id="customise-title">Make it yours.</h2>
+            <p class="section-desc reveal">Override variables after your import. Use the controls on the right to
+                preview changes live in the code.</p>
+
+            <div class="customise-layout reveal">
+
+                <!--Left: code block-->
+                <div class="customise-code">
+                    <div class="code-block" style="max-width:100%;margin-bottom:0;">
+                        <div class="code-header">
+                            <span class="code-lang">css</span>
+                            <button class="copy-btn" data-target="custom-code">Copy</button>
+                        </div>
+                        <pre id="custom-code"><code><span class="prop">@import</span> <span class="val">url</span>(<span class="str">'https://cdn.jsdelivr.net/gh/AumGupta/obsidian-jellyfin@main/obsidian.css'</span>);
+
+<span class="c">/* Accent colour 
+   Format: R, G, B  (no rgb() wrapper)
+   Used for highlights, active states, progress bars.    */</span>
+<span class="sel">:root</span> {
+    <span class="var">--obsidian-accent</span>:    <span class="val accent-val">245, 245, 247</span>;
+    <span class="var">--obsidian-radius</span>:    <span class="val radius-val">12px</span>;
+    <span class="var">--obsidian-indicator</span>: <span class="val">55, 55, 55</span>;
+}
+
+<span class="c">/* Custom font: Import any Google Font and override body.             */</span>
+<span class="prop">@import</span> <span class="val">url</span>(<span class="str">'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'</span>);
+
+<span class="sel">body</span> {
+    <span class="var">font-family</span>: <span class="val">"Inter"</span>, sans-serif;
+}</code></pre>
+                    </div>
+                </div>
+
+                <!--Right: swatches + radius slider + variable table-->
+                <div class="customise-sidebar">
+
+                    <div class="customise-block">
+                        <p class="customise-block-label">Accent colour</p>
+                        <div class="accent-swatches">
+                            <button class="swatch active" style="--c: 245,245,247" data-val="245, 245, 247"
+                                data-label="Default" aria-label="Default accent colour" aria-pressed="true"></button>
+                            <button class="swatch" style="--c: 255,250,240" data-val="255, 250, 240" data-label="Warm"
+                                aria-label="Warm accent colour" aria-pressed="false"></button>
+                            <button class="swatch" style="--c: 100,160,255" data-val="100, 160, 255" data-label="Blue"
+                                aria-label="Blue accent colour" aria-pressed="false"></button>
+                            <button class="swatch" style="--c: 50,200,180" data-val="50, 200, 180" data-label="Teal"
+                                aria-label="Teal accent colour" aria-pressed="false"></button>
+                            <button class="swatch" style="--c: 255,100,120" data-val="255, 100, 120" data-label="Rose"
+                                aria-label="Rose accent colour" aria-pressed="false"></button>
+                        </div>
+                    </div>
+
+                    <div class="customise-block">
+                        <p class="customise-block-label">Corner radius - <span class="radius-display">12px</span></p>
+                        <div class="radius-slider-wrap">
+                            <input type="range" id="radius-slider" class="radius-slider" min="0" max="24" step="1"
+                                value="12" aria-label="Corner radius" aria-valuemin="0" aria-valuemax="24"
+                                aria-valuenow="12" />
+                            <div class="radius-stops" aria-hidden="true">
+                                <span data-val="0">0</span>
+                                <span data-val="4">4</span>
+                                <span data-val="8">8</span>
+                                <span data-val="12">12</span>
+                                <span data-val="16">16</span>
+                                <span data-val="20">20</span>
+                                <span data-val="24">24</span>
+                            </div>
+                        </div>
+                        <div class="radius-preview-row">
+                            <div class="radius-preview-card" id="radius-preview-card">
+                                <span>Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="customise-block">
+                        <p class="customise-block-label">Variables</p>
+                        <table class="var-table">
+                            <tbody>
+                                <tr>
+                                    <td class="var-name"><code>--obsidian-accent</code></td>
+                                    <td class="var-desc">Highlight colour (R, G, B)</td>
+                                </tr>
+                                <tr>
+                                    <td class="var-name"><code>--obsidian-radius</code></td>
+                                    <td class="var-desc">Global corner rounding</td>
+                                </tr>
+                                <tr>
+                                    <td class="var-name"><code>--obsidian-indicator</code></td>
+                                    <td class="var-desc">Episode count pill colour</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--INSTALL-->
+    <section class="section section-install" id="install" aria-labelledby="install-title">
+        <div class="section-inner">
+            <div class="section-label reveal">Install</div>
+            <h2 class="section-title reveal" id="install-title">One line. Done.</h2>
+            <p class="section-desc reveal">Paste into <strong>Dashboard → Branding → Custom CSS</strong> and save.</p>
+            <div class="code-block install-code reveal">
+                <div class="code-header">
+                    <span class="code-lang">css</span>
+                    <button class="copy-btn" data-target="install-code">Copy</button>
+                </div>
+                <pre
+                    id="install-code"><code><span class="prop">@import</span> <span class="val">url</span>(<span class="str">'https://cdn.jsdelivr.net/gh/AumGupta/obsidian-jellyfin@main/obsidian.css'</span>);</code></pre>
+            </div>
+            <div class="install-links reveal">
+                <a href="https://github.com/AumGupta/obsidian-jellyfin" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    View on GitHub
+                </a>
+                <a href="https://github.com/AumGupta/obsidian-jellyfin/issues" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-ghost">Report an Issue</a>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <a href="#" class="nav-logo" aria-label="Obsidian home">
+                    <img src="assets/favicon/apple-touch-icon.png" alt="Obsidian logo" class="nav-icon" width="26"
+                        height="26" />
+                    <span>Obsidian</span>
+                </a>
+                <p>A minimal dark theme for Jellyfin.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/AumGupta/obsidian-jellyfin" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com/AumGupta/obsidian-jellyfin/issues" target="_blank"
+                    rel="noopener noreferrer">Issues</a>
+                <a href="https://github.com/AumGupta/obsidian-jellyfin/blob/main/LICENSE" target="_blank"
+                    rel="noopener noreferrer">MIT License</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with care. Built for <a href="https://jellyfin.org" target="_blank"
+                    rel="noopener noreferrer">Jellyfin</a>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
