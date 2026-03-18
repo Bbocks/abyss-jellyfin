@@ -34,8 +34,8 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 });
 
 //Accent swatch - update code block on click
-const swatches     = document.querySelectorAll('.swatch');
-const accentValEl  = document.querySelector('.accent-val');
+const swatches = document.querySelectorAll('.swatch');
+const accentValEl = document.querySelector('.accent-val');
 
 swatches.forEach(swatch => {
   swatch.addEventListener('click', () => {
@@ -50,41 +50,48 @@ swatches.forEach(swatch => {
       const val = swatch.getAttribute('data-val');
       const rgb = swatch.style.getPropertyValue('--c');
       accentValEl.textContent = val;
-      // flash the updated value in the swatch colour briefly
       accentValEl.style.color = `rgb(${rgb})`;
       setTimeout(() => { accentValEl.style.color = ''; }, 600);
+
+      // Update live preview accent colour
+      const navActive = document.getElementById('prev-nav-active');
+      const listIcon = document.getElementById('prev-listitem-icon');
+      const playBtn = document.getElementById('prev-play-btn');
+      const progress = document.getElementById('prev-card-progress');
+      const rgbStr = `rgb(${rgb})`;
+      const rgbDim = `rgba(${rgb}, 0.15)`;
+
+      if (navActive) { navActive.style.background = rgbStr; navActive.style.color = '#121212'; }
+      if (listIcon) { listIcon.style.background = rgbDim; listIcon.style.color = rgbStr; }
+      if (playBtn) { playBtn.style.color = rgbStr; }
+      if (progress) { progress.style.background = rgbStr; }
     }
   });
 });
 
 //Radius slider
-const SNAP_STOPS   = [0, 4, 8, 12, 16, 18, 20, 24];
-const SNAP_RADIUS  = 1.5; // px - snap zone around each stop
+const SNAP_STOPS = [0, 4, 8, 12, 16, 18, 20, 24];
+const SNAP_RADIUS = 1.5; // px - snap zone around each stop
 
-const slider        = document.getElementById('radius-slider');
-const radiusValEl   = document.querySelector('.radius-val');
+const slider = document.getElementById('radius-slider');
+const radiusValEl = document.querySelector('.radius-val');
 const radiusDisplay = document.querySelector('.radius-display');
-const previewCard   = document.getElementById('radius-preview-card');
-const stopLabels    = document.querySelectorAll('.radius-stops span');
+const previewCard = document.getElementById('radius-preview-card');
+const stopLabels = document.querySelectorAll('.radius-stops span');
 
 function updateRadiusUI(val) {
   const px = `${val}px`;
 
-  // Update code block value
-  if (radiusValEl)   radiusValEl.textContent   = px;
-  // Update label in sidebar header
-  if (radiusDisplay) radiusDisplay.textContent  = px;
-  // Update the preview card's border-radius live
-  if (previewCard)   previewCard.style.borderRadius = px;
-  // Update slider aria
+  if (radiusValEl) radiusValEl.textContent = px;
+  if (radiusDisplay) radiusDisplay.textContent = px;
   if (slider) slider.setAttribute('aria-valuenow', val);
 
-  // Highlight the nearest stop label
+  // Update stop labels
   stopLabels.forEach(label => {
     label.classList.toggle('active', parseInt(label.dataset.val) === val);
   });
 
-  // Update the filled track colour via a CSS custom property
+  // Update slider track fill
   if (slider) {
     const pct = (val / 24) * 100;
     slider.style.background = `linear-gradient(to right,
@@ -93,6 +100,14 @@ function updateRadiusUI(val) {
       rgba(255,255,255,0.08) ${pct}%,
       rgba(255,255,255,0.08) 100%)`;
   }
+
+  // Update border-radius on card and list item (not nav pill — stays 50px)
+  const card = document.getElementById('prev-card');
+  // const listitem = document.getElementById('prev-listitem');
+  const playBtn = document.getElementById('prev-play-btn');
+  if (card) card.style.borderRadius = px;
+  // if (listitem) listitem.style.borderRadius = px;
+  if (playBtn) playBtn.style.borderRadius = px;
 }
 
 function snapValue(raw) {

@@ -643,20 +643,121 @@ code {
   background: var(--accent);
 }
 
-/* Radius preview card */
+/* Live preview components */
 .radius-preview-row {
-  margin-top: 14px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.radius-preview-card {
-  background: var(--surface);
-  border: 1px solid var(--border-hi);
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 0.8rem;
+/* 1. Nav pill bar */
+.prev-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(30,30,30,0.8);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.prev-nav-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 50px;
   color: var(--muted);
-  text-align: center;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-radius 0.2s var(--ease);
+  white-space: nowrap;
+}
+
+.prev-nav-active {
+  background: rgb(245, 245, 247);
+  color: #121212;
+}
+
+/* 2. List item */
+.prev-listitem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: rgb(245,245,247);
+  transition: background 0.2s var(--ease), border-radius 0.2s var(--ease);
+}
+
+.prev-listitem-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50px;
+  background: rgba(245,245,247,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(245,245,247);
+  flex-shrink: 0;
+  transition: background 0.2s var(--ease);
+}
+
+/* 3. Card */
+.prev-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
   transition: border-radius 0.2s var(--ease);
+  background: #1a1a2e;
+}
+
+.prev-card-img {
+  position: relative;
+  height: 90px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-play-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(245,245,247,0.15);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(245,245,247);
+  transition: background 0.2s var(--ease), border-radius 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.prev-card-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+}
+
+.prev-card-progress {
+  width: 35%;
+  height: 100%;
+  background: rgb(245,245,247);
+  transition: background 0.2s var(--ease);
 }
 
 /* Variable table */
@@ -904,6 +1005,29 @@ pre .str {
   .customise-sidebar {
     flex: none;
     width: 100%;
+  }
+
+  .customise-code {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .customise-code .code-block {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .customise-code pre {
+    overflow-x: auto;
+    max-width: 100%;
+    font-size: 0.72rem;
+  }
+
+  .customise-code code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
   }
 
   .footer-inner {

@@ -292,7 +292,7 @@
 
                 <!--Left: code block-->
                 <div class="customise-code">
-                    <div class="code-block" style="max-width:100%;margin-bottom:0;">
+                    <div class="code-block" style="margin-bottom:0;">
                         <div class="code-header">
                             <span class="code-lang">css</span>
                             <button class="copy-btn" data-target="custom-code">Copy</button>
@@ -353,8 +353,35 @@
                             </div>
                         </div>
                         <div class="radius-preview-row">
-                            <div class="radius-preview-card" id="radius-preview-card">
-                                <span>Preview</span>
+                            <!-- 1. Nav bar pill -->
+                            <div class="prev-nav">
+                                <div class="prev-nav-pill prev-nav-active" id="prev-nav-active">Home</div>
+                                <div class="prev-nav-pill" id="prev-nav-inactive">Favourites</div>
+                            </div>
+                            <!-- 2. List item -->
+                            <div class="prev-listitem" id="prev-listitem">
+                                <div class="prev-listitem-icon" id="prev-listitem-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z" />
+                                    </svg>
+                                </div>
+                                <span>Movies</span>
+                            </div>
+                            <!-- 3. Card with play button -->
+                            <div class="prev-card" id="prev-card">
+                                <div class="prev-card-img">
+                                    <div class="prev-card-overlay">
+                                        <div class="prev-play-btn" id="prev-play-btn">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="prev-card-bar">
+                                        <div class="prev-card-progress" id="prev-card-progress"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
