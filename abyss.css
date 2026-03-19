@@ -52,7 +52,7 @@
    3. BASE / GLOBAL
    ============================================================================= */
 
-html {
+#reactRoot {
     scrollbar-gutter: stable;
 }
 
@@ -225,6 +225,12 @@ input[type="radio"]:checked {
     margin-right: 16px;
 }
 
+.inputLabel,
+.selectLabel,
+.checkboxLabel {
+    font-weight: 500;
+}
+
 .cardText {
     padding: .06em .5em 0 .06em;
     font-weight: 200;
@@ -259,6 +265,20 @@ input[type="radio"]:checked {
 .formDialogHeaderTitle {
     font-weight: bold !important;
     margin-left: 0 !important;
+}
+
+#dialogToc {
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+#dialogToc .toc {
+    overflow-y: scroll;
+}
+
+#dialogToc .toc li {
+    margin-bottom: 12px;
 }
 
 
@@ -381,11 +401,6 @@ input[type="radio"]:checked {
 
 .scrollContainer {
     padding: 36px 12px 0 12px;
-}
-
-.navMenuOption-selected,
-.selectionCommandsPanel {
-    background: #101010 !important;
 }
 
 /* Footer */
@@ -605,6 +620,8 @@ div[data-role="controlgroup"] a[data-role="button"] {
 
 /* --- Dialogs & Overlays --- */
 
+.playerStats-stats,
+.upNextContainer,
 .dialog,
 .toast {
     border-radius: 24px !important;
@@ -669,6 +686,8 @@ div[data-role="controlgroup"] a[data-role="button"] {
 .cardOverlayContainer:hover,
 .dialog,
 .toast,
+.upNextContainer,
+.playerStats-stats,
 .raised.homeLibraryButton:hover {
     border: solid 1px rgba(245, 245, 247, 0.2) !important;
 }
@@ -879,6 +898,7 @@ div[data-role="controlgroup"] a[data-role="button"] {
     margin-top: 1.05em;
 }
 
+.itemSelectionPanel,
 .checkboxOutline,
 .emby-input,
 .emby-textarea,
@@ -992,7 +1012,7 @@ input[type="checkbox"]:focus + .checkboxOutline {
 }
 
 #userProfilePage .readOnlyContent {
-    padding: 24px !important;
+    padding: 0 !important;
 }
 
 #userProfilePage .readOnlyContent div {
@@ -1003,10 +1023,50 @@ input[type="checkbox"]:focus + .checkboxOutline {
 #image, 
 #uploadImage {
     border-radius: 24px !important;
+    margin: 12px !important;
 }
 
 #quickConnectPreferencesPage {
     justify-items: center;
+}
+
+.itemSelectionPanel {
+    padding: 12px !important;
+}
+
+.selectionCommandsPanel {
+    padding: 1.5em 24px !important;
+}
+
+[dir=ltr] .playerStats-stats {
+    padding: 1em 3em 2em 2em;
+}
+
+
+.playerStats-stat {
+    align-items: baseline;
+}
+
+.playerStats-stat-header {
+    font-size: medium !important;
+}
+
+.playerStats-stat-label {
+    opacity: 0.5;
+    padding-bottom: 2px;
+}
+
+.playerStats-stat-value {
+    font-family: monospace;
+    font-size: medium;
+}
+
+.playerStats-closeButton {
+    margin: 10px;
+}
+
+[dir="ltr"] .upNextContainer {
+    margin: 0px 2em 10.4em 0px;
 }
 
 /* =============================================================================
@@ -1048,7 +1108,6 @@ input[type="checkbox"]:focus + .checkboxOutline {
 .emby-textarea,
 .nowPlayingPageImage,
 .upNextDialog-poster-img,
-.upNextContainer,
 .cardOverlayButtonIcon,
 .innerCardFooter {
     border-radius: var(--abyss-radius) !important;
@@ -1088,6 +1147,16 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 #inputTextColor,
 .checkboxOutline {
     border-radius: 8px !important;
+}
+
+.dialog-fullscreen {
+    border-radius: 8px !important;
+}
+
+.upNextContainer,
+.playerStats,
+.playerStats-stats {
+    border-radius: 24px !important;
 }
 
 /* =============================================================================
@@ -1486,6 +1555,9 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
     .videoOsdBottom .osdControls,
     .readOnlyContent .verticalSection,
     .button-submit,
+    .upNextContainer,
+    .selectionCommandsPanel,
+    .playerStats-stats,
     .appfooter {
         backdrop-filter: blur(15px) !important;
         background-color: rgba(var(--abyss-glass-tint), 0.69) !important;
@@ -1644,4 +1716,25 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
     transition: transform 0.18s var(--abyss-ease-snappy),
                 left 0.18s var(--abyss-ease-snappy),
                 width 0.18s var(--abyss-ease-snappy) !important;
+}
+
+/* Favourite button heart animation — all contexts */
+@keyframes abyss-heart-pop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.3); }
+    70%  { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes abyss-heart-glow {
+    0%   { filter: drop-shadow(0 0 0px rgba(249, 38, 114, 0)); }
+    40%  { filter: drop-shadow(0 0 10px rgba(249, 38, 114, 0.9)); }
+    100% { filter: drop-shadow(0 0 0px rgba(249, 38, 114, 0)); }
+}
+
+.cardOverlayButton.ratingbutton-withrating .cardOverlayButtonIcon::before,
+.btnUserRating.ratingbutton-withrating .material-icons,
+.mediaButton.ratingbutton-withrating .material-icons {
+    animation: abyss-heart-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) normal none,
+               abyss-heart-glow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) normal none;
 }
