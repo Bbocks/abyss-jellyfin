@@ -437,8 +437,9 @@ function Uninstall-Abyss {
     Write-Host " ================================================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "  Next steps:" -ForegroundColor White
-    Write-Host "    1. Hard refresh your browser (Ctrl+F5)" -ForegroundColor DarkGray
-    Write-Host "    2. Relaunch Jellyfin Media Player if using the desktop app" -ForegroundColor DarkGray
+    Write-Host "    1. Delete browser cache" -ForegroundColor Red
+    Write-Host "    2. Hard refresh your browser (Ctrl+F5)" -ForegroundColor Yellow
+    Write-Host "    3. Relaunch Jellyfin Media Player if using the desktop app" -ForegroundColor DarkGray
     Write-Host ""
     Read-Host " Press Enter to exit"
 }
