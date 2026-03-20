@@ -452,7 +452,12 @@ function Uninstall-Abyss {
 
 $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
-    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    # If running via iex (no file path), re-download and run elevated
+    if (-not $PSCommandPath) {
+        Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"irm https://raw.githubusercontent.com/AumGupta/abyss-jellyfin/main/setup/setup.ps1 | iex`"" -Verb RunAs
+    } else {
+        Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    }
     exit
 }
 
