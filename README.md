@@ -7,7 +7,7 @@
 
 <img alt="Abyss Logo" src="docs/assets/favicon/apple-touch-icon.png" style="width: 72px;">
 
-A clean and minimal theme for [Jellyfin](https://jellyfin.org): frosted glass surfaces, refined typography, smooth transitions, and a minimal aesthetic drawing from iOS and macOS design language.
+A clean and minimal theme for Jellyfin: frosted glass surfaces, refined typography, smooth transitions, and a minimal aesthetic drawing from iOS and macOS design language.
 
 </div>
 
@@ -190,8 +190,11 @@ Pull requests are welcome. For suggestions, feature requests, or bug reports, op
 
 Abyss Jellyfin is licensed under the [MIT License](https://github.com/AumGupta/abyss-jellyfin?tab=MIT-1-ov-file).
 
-## Credits
+<details>
+<summary>Credits</summary>
 
 - Built with inspiration from [Ultrachromic](https://github.com/CTalvio/Ultrachromic) by CTalvio.
 - [Google Sans](https://fonts.google.com/specimen/Google+Sans) by Google, served via Google Fonts.
 - [Material Icons Round](https://fonts.google.com/icons) by Google, served via jsDelivr.
+
+</details>
