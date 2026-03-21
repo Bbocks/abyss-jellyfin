@@ -8,68 +8,56 @@
 
 <img alt="Abyss Logo" src="docs/assets/favicon/apple-touch-icon.png" style="margin-top:16px; width: 72px;">
 
-<div style="padding: 16px 72px;">
 A clean and minimal theme for Jellyfin with frosted glass surfaces, refined typography, smooth animations and a minimal design language that re-skins JellyFin almost exhaustively.
-</div>
 
 <a href="https://aumgupta.github.io/abyss-jellyfin/">
-  <img src="https://img.shields.io/badge/View%20%26%20Install-→-f5f5f7?style=for-the-badge&labelColor=2f2f2f" alt="Install" style="margin: 24px 0; width: 273.5;" />
+  <img src="https://img.shields.io/badge/View%20%26%20Install-→-f5f5f7?style=for-the-badge&labelColor=2f2f2f" alt="Install" width=273.5 style="margin: 24px 0; width: 273.5;" />
 </a>
 </div>
 
-
-
-<p style="font-size: x-large; font-weight: 500;"> Preview </p>
-
-<table>
-  <tr>
-    <td colspan="2"><img src="docs/assets/images/1.png" style="width:100%;border-radius:24px;"/></td>
-  </tr>
-  <tr>
-    <td width="18%"><img src="docs/assets/images/2.png" style="width:100%;border-radius:24px;"/></td>
-    <td width="71%"><img src="docs/assets/images/3.png" style="width:100%;border-radius:24px;"/></td>
-  </tr>
-</table>
-
+<img src="docs/assets/images/preview.png" style="width:100%;"/>
 
 <details>
 
-<summary style="font-size: x-large; font-weight: 500; margin: 36px 0;">See full preview</summary>
+<summary><h2>See full preview</h2></summary>
 
+<img src="docs/assets/images/preview-full.png" style="width:100%;"/>
+
+<!-- 
 ### Cards & UI Details
 <table>
   <tr>
-    <td rowspan="2" width="40%"><img src="docs/assets/images/5.png" style="width:100%;border-radius:24px;"/></td>
-    <td><img src="docs/assets/images/6.png" style="width:100%;border-radius:24px;"/></td>
+    <td rowspan="2" width="40%"><img src="docs/assets/images/5.png" style="width:100%;"/></td>
+    <td><img src="docs/assets/images/6.png" style="width:100%;"/></td>
   </tr>
   <tr>
-    <td><img src="docs/assets/images/4.png" style="width:100%;border-radius:24px;"/></td>
+    <td><img src="docs/assets/images/4.png" style="width:100%;"/></td>
   </tr>
 </table>
 
 ### Libraries
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/images/details-page.png" style="width:100%;border-radius:24px;"/></td>
-    <td width="50%"><img src="docs/assets/images/shows-2.png" style="width:100%;border-radius:24px;"/></td>
+    <td width="50%"><img src="docs/assets/images/details-page.png" style="width:100%;"/></td>
+    <td width="50%"><img src="docs/assets/images/shows-2.png" style="width:100%;"/></td>
   </tr>
   <tr>
-    <td width="50%"><img src="docs/assets/images/movies-2.png" style="width:100%;border-radius:24px;"/></td>
-    <td width="50%"><img src="docs/assets/images/movies-1.png" style="width:100%;border-radius:24px;"/></td>
+    <td width="50%"><img src="docs/assets/images/movies-2.png" style="width:100%;"/></td>
+    <td width="50%"><img src="docs/assets/images/movies-1.png" style="width:100%;"/></td>
   </tr>
 </table>
 
 ### Music
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/images/music1.png" style="width:100%;border-radius:24px;"/></td>
-    <td width="50%"><img src="docs/assets/images/music2.png" style="width:100%;border-radius:24px;"/></td>
+    <td width="50%"><img src="docs/assets/images/music1.png" style="width:100%;"/></td>
+    <td width="50%"><img src="docs/assets/images/music2.png" style="width:100%;"/></td>
   </tr>
-    <td width="50%"><img src="docs/assets/images/music3.png" style="width:100%;border-radius:24px;"/></td>
-    <td width="50%"><img src="docs/assets/images/music4.png" style="width:100%;border-radius:24px;"/></td>
+    <td width="50%"><img src="docs/assets/images/music3.png" style="width:100%;"/></td>
+    <td width="50%"><img src="docs/assets/images/music4.png" style="width:100%;"/></td>
   <tr>
   </tr>
-</table>
+</table> -->
 
 </details>
 
@@ -86,12 +74,11 @@ Download the latest **`abyss-setup-vX.X.X.exe`** from the [Releases](https://git
 - Restart Jellyfin when done
 
 > [!NOTE]
-> Iff you are on Windows :)
->
+> If you are on Windows.
 > **Windows SmartScreen may show a warning!** It is completely normal, the setup is 100% safe. Click **More info** then **Run anyway**. This happens because the installer is new and hasn't yet built a download reputation with Microsoft.
 >
 > <details>
-> <summary>Why is this safe to run?</summary>
+> <summary><em>Why is this safe to run?</em></summary>
 >
 > <br>
 >
@@ -107,7 +94,7 @@ Download the latest **`abyss-setup-vX.X.X.exe`** from the [Releases](https://git
 
 <details>
 
-<summary style="font-size: x-large; font-weight: 500;">Manual Install</summary>
+<summary><h2>Manual Install</h2></summary>
 
 
 If you prefer not to use the installer, paste this single line into **Dashboard > Branding > Custom CSS** and save:
@@ -119,7 +106,7 @@ If you prefer not to use the installer, paste this single line into **Dashboard 
 After applying, go to **Settings > Home** and arrange your home sections in this order: Continue Watching, Next Up, My Media, Recently Added. This is required because Abyss hides the card text of the third section (`section2`) to give the My Media row a clean, cover-only look.
 
 <details>
-<summary>How to override the section2 card text hiding</summary>
+<summary><em>How to override the section2 card text hiding</em></summary>
 
 <br>
 
@@ -149,7 +136,7 @@ Or if "My Media" is in a different position, target that section instead:
 
 <details>
 
-<summary style="font-size: x-large; font-weight: 500;">Customisation</summary>
+<summary><h2>Customisation</h2></summary>
 
 Override any of these variables at the top of your **Custom CSS** field, after the `@import` line:
 
@@ -178,7 +165,8 @@ Override any of these variables at the top of your **Custom CSS** field, after t
 | Teal | `50, 200, 180` |
 | Rose | `255, 100, 120` |
 
-> [!NOTE]
+> NOTE:
+> 
 > You can also change the font by adding a *Google Fonts* (or any other source) `@import` and overriding the `body` font-family after your theme import. For example, to use [Inter](https://fonts.google.com/specimen/Inter):
 > ```css
 > @import url('https://cdn.jsdelivr.net/gh/AumGupta/abyss-jellyfin@main/abyss.css');
