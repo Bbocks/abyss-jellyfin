@@ -1416,6 +1416,14 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
     padding: .5em 1.9em .5em .5em;
 }
 
+.trackSelections .selectContainer .selectArrowContainer .selectArrow {
+    margin-top: .2em;
+}
+
+.trackSelections .selectContainer {
+    align-items: center;
+}
+
 /* Slider track rounding */
 .mdl-slider-background-flex,
 .mdl-slider-background-flex-inner,
