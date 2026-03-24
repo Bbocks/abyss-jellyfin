@@ -1,0 +1,82 @@
+name: build-linux-installer
+
+on:
+  push:
+    paths:
+      - 'setup.sh'
+  release:
+    types: [created]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Get version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            TAG="${{ github.ref_name }}"
+          else
+            TAG=$(curl -s \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
+              | grep '"tag_name"' | cut -d'"' -f4)
+            TAG="${TAG:-v0.0.0}"
+          fi
+          SHORT_VERSION="${TAG#v}"
+          FILE_NAME="abyss-setup-v${SHORT_VERSION}.deb"
+          echo "SHORT_VERSION=${SHORT_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "FILE_NAME=${FILE_NAME}"         >> "$GITHUB_OUTPUT"
+
+      - name: Build .deb package
+        run: |
+          PKG="abyss-setup_${{ steps.version.outputs.SHORT_VERSION }}"
+          mkdir -p "${PKG}/DEBIAN"
+          mkdir -p "${PKG}/usr/local/bin"
+
+          # Install setup.sh as abyss-setup
+          cp setup.sh "${PKG}/usr/local/bin/abyss-setup"
+          chmod 755   "${PKG}/usr/local/bin/abyss-setup"
+
+          # Write control file
+          cat > "${PKG}/DEBIAN/control" << EOF
+          Package: abyss-setup
+          Version: ${{ steps.version.outputs.SHORT_VERSION }}
+          Section: utils
+          Priority: optional
+          Architecture: all
+          Depends: bash, curl, python3
+          Maintainer: AumGupta <https://github.com/AumGupta>
+          Homepage: https://github.com/AumGupta/abyss-jellyfin
+          Description: Installer for Abyss - a clean minimal Jellyfin theme
+           Installs and configures the Abyss theme for Jellyfin,
+           including CSS, display preferences, and the Spotlight add-on.
+          EOF
+
+          # Strip leading whitespace from heredoc
+          sed -i 's/^          //' "${PKG}/DEBIAN/control"
+
+          dpkg-deb --build --root-owner-group "${PKG}"
+          mv "${PKG}.deb" "${{ steps.version.outputs.FILE_NAME }}"
+
+      - name: Upload to latest release
+        if: github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.SHORT_VERSION }}
+          files: ${{ steps.version.outputs.FILE_NAME }}
+          fail_on_unmatched_files: true
+
+      - name: Upload to new release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.version.outputs.FILE_NAME }}
+          fail_on_unmatched_files: true
