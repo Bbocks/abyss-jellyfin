@@ -153,7 +153,8 @@ connect_jellyfin() {
         read -rs _password
         echo ""
 
-        local body="{\"Username\":\"${_username}\",\"Pw\":\"${_password}\"}"
+        local body
+        body=$(python3 -c "import json,sys; print(json.dumps({'Username':sys.argv[1],'Pw':sys.argv[2]}))" "$_username" "$_password")
 
         _response=$(curl -fsSL \
             -X POST "${server_url}/Users/AuthenticateByName" \
@@ -171,9 +172,9 @@ connect_jellyfin() {
     done
 
     # Write to globals - cannot use subshell return as it breaks interactive read
-    ABYSS_TOKEN=$(echo "$_response"     | grep -o '"AccessToken":"[^"]*"' | cut -d'"' -f4)
-    ABYSS_USER_NAME=$(echo "$_response" | grep -o '"Name":"[^"]*"'        | head -1 | cut -d'"' -f4)
-    ABYSS_USER_ID=$(echo "$_response"  | grep -o '"Id":"[^"]*"'           | head -1 | cut -d'"' -f4)
+    ABYSS_TOKEN=$(    echo "$_response" | python3 -c "import json,sys; print(json.load(sys.stdin)['AccessToken'])")
+    ABYSS_USER_NAME=$(echo "$_response" | python3 -c "import json,sys; print(json.load(sys.stdin)['User']['Name'])")
+    ABYSS_USER_ID=$(  echo "$_response" | python3 -c "import json,sys; print(json.load(sys.stdin)['User']['Id'])")
 }
 
 get_api_header() {

@@ -27,10 +27,10 @@ jobs:
             TAG=$(curl -s \
               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
-              | grep '"tag_name"' | cut -d'"' -f4)
+              | jq -r .tag_name)
             TAG="${TAG:-v0.0.0}"
           fi
-          SHORT_VERSION="${TAG#v}"
+          SHORT_VERSION=$(echo "${TAG#v}" | awk -F. '{printf "%s.%s.%s", $1, ($2==""?"0":$2), ($3==""?"0":$3)}')
           FILE_NAME="abyss-setup-v${SHORT_VERSION}.sh"
           echo "SHORT_VERSION=${SHORT_VERSION}" >> "$GITHUB_OUTPUT"
           echo "FILE_NAME=${FILE_NAME}"         >> "$GITHUB_OUTPUT"

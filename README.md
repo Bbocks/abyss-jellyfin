@@ -70,7 +70,7 @@ A clean and minimal theme for Jellyfin with frosted glass surfaces, refined typo
 
 ## Features
 
-- **One-click installer**: `abyss-setup.exe` (Windows) and `abyss-setup.sh` (Linux) configure your entire Jellyfin instance, CSS, dashboard theme, home section order, and Spotlight, all automatically. *The theme selector in display settings becomes locked to Dark after installation, which is intentional and expected.*
+- **One-click installer**: `abyss-setup-vX.X.X.exe` (Windows) and `abyss-setup-vX.X.X.sh` (Linux) configure your entire Jellyfin instance, CSS, dashboard theme, home section order, and Spotlight, all automatically. *The theme selector in display settings becomes locked to Dark after installation, which is intentional and expected.*
 - **Spotlight home banner**: a cinematic banner on your home screen showing your current Continue Watching item, complete with backdrop image, metadata pills (rating, runtime, score), and a resume play button.
 - **Frosted glass UI**: header, drawer, dialogs, toasts, and footer all use `backdrop-filter` blur for a layered, depth-rich interface
 - **Refined typography**: *Google Sans* throughout, with consistent weight and spacing
