@@ -35,9 +35,12 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 
 // Fetch latest release from GitHub API and update download button
 (async () => {
-  const btn = document.getElementById('download-btn');
-  const label = document.getElementById('download-label');
-  if (!btn || !label) return;
+  const btn_lin = document.getElementById('download-btn-lin');
+  const btn_win = document.getElementById('download-btn-win');
+  const label_lin = document.getElementById('download-label-lin');
+  const label_win = document.getElementById('download-label-win');
+
+  if (!btn_lin || !btn_win || !label_lin || !label_win) return;
 
   try {
     const res = await fetch('https://api.github.com/repos/AumGupta/abyss-jellyfin/releases/latest');
@@ -45,14 +48,21 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     const data = await res.json();
 
     const tag = data.tag_name || '';
-    const asset = (data.assets || []).find(a => a.name.endsWith('.exe'));
+    const asset_lin = (data.assets || []).find(a => a.name.endsWith('.sh'));
+    const asset_win = (data.assets || []).find(a => a.name.endsWith('.exe'));
+    console.log(asset_lin.name);
+    console.log(asset_win.name);
 
-    if (asset) {
-      btn.href = asset.browser_download_url;
-      label.textContent = `Download ${asset.name}`;
+    if (asset_lin && asset_win) {
+      btn_lin.href = asset_lin.browser_download_url;
+      btn_win.href = asset_win.browser_download_url;
+      label_lin.textContent = `Download ${asset_lin.name}`;
+      label_win.textContent = `Download ${asset_win.name}`;
     } else {
-      btn.href = data.html_url || btn.href;
-      if (tag) label.textContent = `Download Installer ${tag}`;
+      btn_lin.href = data.html_url || btn_lin.href;
+      btn_win.href = data.html_url || btn_win.href;
+      if (tag) label_lin.textContent = `Download Installer ${tag}`;
+      if (tag) label_win.textContent = `Download Installer ${tag}`;
     }
   } catch (e) {
     // Silently fall back to releases/latest link already set in href
