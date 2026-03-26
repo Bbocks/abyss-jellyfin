@@ -6,6 +6,7 @@
     border-radius: 32px !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(245, 245, 247, 0.2) !important;
+    backdrop-filter: blur(15px) !important;
 }
 
 #jellyfin-enhanced-panel>div:first-of-type {
@@ -67,4 +68,56 @@
     background: rgb(var(--abyss-accent)) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+}
+
+.genre-overlay-container *,
+.rating-overlay-container *,
+.quality-overlay-container *,
+.language-overlay-container * {
+    border-radius: 12px !important;
+}
+
+.language-overlay-container {
+    left: 12px !important;
+    bottom: 12px !important;
+    border-radius: 12px !important;
+}
+
+.quality-overlay-container {
+    left: 12px !important;
+    top: 12px !important;
+    border-radius: 12px !important;
+}
+
+.quality-overlay-label {
+    box-shadow: none !important;
+}
+
+.rating-overlay-container {
+    right: 12px !important;
+    bottom: 12px !important;
+    border-radius: 12px !important;
+}
+
+.genre-overlay-container {
+    border-radius: 12px !important;
+}
+
+.genre-overlay-container .genre-tag {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: none;
+    border: none;
+    padding: 1px;
+}
+
+.je-bm-player-modal-container {
+    background-color: rgba(var(--abyss-glass-tint), 0.69) !important;
+    border-radius: 32px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(245, 245, 247, 0.2) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+.cardImageContainer .cardIndicators~.genre-overlay-container {
+    margin-top: clamp(24px, 7vw, 38px);
 }
